@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '00000000000000000000000000000000000000000000000000'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -52,16 +52,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fusion.wsgi.application'
 
 
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "fusion",
-        'USER': "postgres",
-        'PASSWORD': "irineu",
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}"""
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': "fusion",
+#         'USER': "postgres",
+#         'PASSWORD': "irineu",
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
 DATABASES = {
     'default': dj_database_url.config()
