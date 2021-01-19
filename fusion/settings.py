@@ -4,7 +4,7 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '63-y87ao!y3fds(%^5)9+7tkn@($lh6l+4h+g)1s@1)dlxt$7j'
+SECRET_KEY = '00000000000000000000000000000000000000000000000000'
 
 DEBUG = True
 
