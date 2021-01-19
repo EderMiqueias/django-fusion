@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -51,7 +52,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fusion.wsgi.application'
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "fusion",
@@ -60,8 +61,11 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432'
     }
-}
+}"""
 
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -96,7 +100,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Email teste desenvolvimento
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 """
 Email produção
@@ -107,3 +111,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_PASSWORD = 'fusion'
 DEFAULT_FROM_EMAIL = 'contato@fusion.com.br
 """
+
+LOGOUT_REDIRECT_URL = 'index'
